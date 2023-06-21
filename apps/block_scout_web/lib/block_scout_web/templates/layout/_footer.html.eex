@@ -1,0 +1,74 @@
+<footer class="footer">
+  <div class="footer-body container">
+    <div class="row">
+      <div  class="col-xs-12 col-lg-8">
+        <div class="row">
+          <!-- Logo -->
+          <div class="col-xs-12 col-lg-4">
+            <div class="row footer-logo-row">
+              <div class="col-md-12">
+                <!--
+                <%= link to: webapp_url(@conn), class: "footer-brand" do %>
+                  <%= if logo_footer() do %>
+                    <img class="footer-logo" src="<%= static_path(@conn, logo_footer()) %>" alt="<%= subnetwork_title() %>" />
+                  <% end %>
+                  <%= if logo_text() do %>
+                    <span class="logo-text in-footer <%= unless logo_footer(), do: "no-logo" %>"> <%= logo_text() %> </span>
+                  <% end %>
+                <% end %>
+                -->
+                <%= link to: "/", class: "footer-brand" do %>
+                  <img src="/images/de-paas-logo.png" style="width: 36px; height: 36px" alt="logo" />
+                  <span class="logo-text in-footer" style='font-weight: 600; color: #FFFFFF; font-size: 18px; margin-left: 14px;'>DEPaaS</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <!-- BlockScout -->
+          <div class="footer-list col-xs-12 col-lg-8">
+            <ul>
+              <li><a href="<%= issue_link(@conn) %>" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Submit an Issue") %></a></li>
+              <li><a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
+              <li><a href="<%= Application.get_env(:block_scout_web, :footer)[:chat_link] %>" rel="noreferrer" class="footer-link"><%= gettext("Chat (#blockscout)") %></a></li>
+              <%= if Application.get_env(:block_scout_web, :footer)[:forum_link_enabled] && Application.get_env(:block_scout_web, :footer)[:forum_link] do %>
+              <li><a href="<%= Application.get_env(:block_scout_web, :footer)[:forum_link] %>" rel="noreferrer" class="footer-link"><%= gettext("Forum") %></a></li>
+              <% end %>
+              <%= render BlockScoutWeb.LayoutView, "_add_chain_to_mm.html" %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- icon列表 -->
+      <div class="footer-social-icons col-xs-12 col-lg-4">
+        <a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+          <div class="footer-social-icon-container fontawesome-icon github"></div>
+        </a>
+        <a href="https://www.twitter.com/blockscoutcom/" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
+          <div class="footer-social-icon-container fontawesome-icon twitter"></div>
+        </a>
+        <%= if Application.get_env(:block_scout_web, :footer)[:telegram_link_enabled] && Application.get_env(:block_scout_web, :footer)[:telegram_link] do %>
+        <a href="<%= Application.get_env(:block_scout_web, :footer)[:telegram_link] %>" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
+          <div class="footer-social-icon-container fontawesome-icon telegram"></div>
+        </a>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="footer-info d-none d-sm-block">
+      <p class="footer-info-text">
+        <%= gettext("DEPaaS is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %>
+
+        <% version = version() %>
+        <%= unless ignore_version?(version) do %>
+        <% release_link = release_link(version) %>
+        <span>
+              <%= gettext("Version") %>: <%= release_link %>
+            </span>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</footer>
