@@ -129,7 +129,7 @@
 @mixin btn-line($bg-color: transparent, $text-color: $secondary, $font-size: 12px, $disabledHover: false) {
   -webkit-appearance: none !important;
   align-items: center;
-  background-color: $bg-color;
+  //background-color: $bg-color;
   border-radius: 2px;
   //border: 1px solid $text-color;
   color: $text-color;

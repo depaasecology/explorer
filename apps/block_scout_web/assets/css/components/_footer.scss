@@ -95,6 +95,7 @@ $footer-logo-width: auto !default;
     padding: 0;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     li {
       display: flex;
@@ -124,4 +125,41 @@ $footer-logo-width: auto !default;
 
 .footer-brand {
   text-decoration: none !important;
+}
+
+.meta_mask {
+  background-image: url("../static/images/icons/metamask-fox.svg");
+  background-position: center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  //background-position-x: 30px;
+  background-position-y: center;
+  //padding-left: 40px;
+  outline: none;
+  background-position-x: 0px;
+  padding-left: 25px;
+}
+.gitHub {
+  background-image: url("../static/images/icons/github.svg");
+  background-position: center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  //background-position-x: 30px;
+  background-position-y: center;
+  //padding-left: 40px;
+  outline: none;
+  background-position-x: 0px;
+  padding-left: 25px;
+}
+.contact_us {
+  background-image: url("../static/images/de-paas-logo.png");
+  background-position: center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  //background-position-x: 30px;
+  background-position-y: center;
+  //padding-left: 40px;
+  outline: none;
+  background-position-x: 0px;
+  padding-left: 25px;
 }

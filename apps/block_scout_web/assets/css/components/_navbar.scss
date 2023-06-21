@@ -63,7 +63,7 @@ $header-logo-text-color: #333 !default;
 
       &.active,
       &:hover {
-        color: $primary;
+        color: $primary !important;
         @include media-breakpoint-up(lg) {
           &:before {
             opacity: 1;

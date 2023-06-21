@@ -28,6 +28,7 @@
           <!-- BlockScout -->
           <div class="footer-list col-xs-12 col-lg-8">
             <ul>
+              <!--
               <li><a href="<%= issue_link(@conn) %>" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Submit an Issue") %></a></li>
               <li><a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
               <li><a href="<%= Application.get_env(:block_scout_web, :footer)[:chat_link] %>" rel="noreferrer" class="footer-link"><%= gettext("Chat (#blockscout)") %></a></li>
@@ -35,12 +36,17 @@
               <li><a href="<%= Application.get_env(:block_scout_web, :footer)[:forum_link] %>" rel="noreferrer" class="footer-link"><%= gettext("Forum") %></a></li>
               <% end %>
               <%= render BlockScoutWeb.LayoutView, "_add_chain_to_mm.html" %>
+              -->
+              <li><a href="" rel="noreferrer" class="footer-link meta_mask" target="_blank"><%= gettext("MetaMask") %></a></li>
+              <li><a href="https://github.com/depaasecology/explorer gitHub" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("GitHub") %></a></li>
+              <li><a href="http://depaas.de/" rel="noreferrer" class="footer-link contact_us" target="_blank"><%= gettext("Contact Us") %></a></li>
             </ul>
           </div>
         </div>
       </div>
 
       <!-- icon列表 -->
+      <!--
       <div class="footer-social-icons col-xs-12 col-lg-4">
         <a href="<%= Application.get_env(:block_scout_web, :footer)[:github_link] %>" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
           <div class="footer-social-icon-container fontawesome-icon github"></div>
@@ -54,12 +60,13 @@
         </a>
         <% end %>
       </div>
+      -->
     </div>
 
     <!-- 版权信息 -->
     <div class="footer-info d-none d-sm-block">
       <p class="footer-info-text">
-        <%= gettext("DEPaaS is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %>
+        <%= gettext("DE_Explorer provides users with a comprehensive, easy-to-use interface to view, confirm and inspect transactions on the EVM (Ethereum Virtual Machine) blockchain.") %>
 
         <% version = version() %>
         <%= unless ignore_version?(version) do %>

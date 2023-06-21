@@ -348,7 +348,10 @@ $card-tab-icon-color-active: #fff !default;
 
 .chain-list {
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  @media screen and (max-width: 768px) {
+    overflow-x: scroll;
+  }
 }
 
 .transaction_list_box {
