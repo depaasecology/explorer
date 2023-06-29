@@ -2,7 +2,7 @@
 <p align="center">DE Explorer for inspecting and analyzing EVM Chains.</p>
 <div align="center">
 
-[Explorer](https://github.com/depaasecology/explorer)
+[Explorer](http://scan.depaas.de/#/index)
 </div>
 
 
