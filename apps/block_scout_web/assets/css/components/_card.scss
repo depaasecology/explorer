@@ -1,15 +1,15 @@
 $card-background-color: #fff !default;
 $card-tab-active: $primary !default;
 $card-default-border-radius: 10px !default;
-$card-horizontal-padding: 30px;
-$card-vertical-padding: 30px;
+$card-horizontal-padding: 16px;
+$card-vertical-padding: 16px;
 $card-background-1: $primary !default;
 $card-background-1-text-color: #fff !default;
 $card-tab-icon-color: #20b760 !default;
 $card-tab-icon-color-active: #fff !default;
 
 .card {
-  background-color: $de-background-color;
+  background-color: transparent !important;
   border-radius: $card-default-border-radius;
   border: none;
   //box-shadow: 0 0 30px 0 rgba(202, 199, 226, 0.5);
@@ -154,7 +154,8 @@ $card-tab-icon-color-active: #fff !default;
 }
 
 .card-body {
-  padding: $card-horizontal-padding;
+  //padding: $card-horizontal-padding;
+  padding: 16px;
 }
 
 .card-body-flex-column-space-between {
@@ -169,8 +170,9 @@ $card-tab-icon-color-active: #fff !default;
 }
 
 .card-chain-blocks {
-  min-height: 233px;
+  //min-height: 233px;
   max-height: auto;
+  margin-bottom: 3rem;
   [class*="col-"]:last-child {
     .tile {
       margin-bottom: 0;
@@ -179,8 +181,9 @@ $card-tab-icon-color-active: #fff !default;
 }
 
 .card-chain-transactions {
-  min-height: 664px;
+  //min-height: 664px;
   max-height: auto;
+  margin-bottom: 3rem;
 
   .tile {
     margin-bottom: 0;
@@ -357,10 +360,11 @@ $card-tab-icon-color-active: #fff !default;
 .transaction_list_box {
   background: #FFFFFF;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .tile_icon {
   width: 12px;
   height: 12px;
-  margin-left: 6px;
+  margin-left: 4px;
 }

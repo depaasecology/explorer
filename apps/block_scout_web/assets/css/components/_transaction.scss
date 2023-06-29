@@ -96,3 +96,10 @@
 		white-space: nowrap;
 	}
 }
+
+.token_transfer_num {
+	@media screen and (max-width: 768px) {
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+	}
+}

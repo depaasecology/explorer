@@ -50,9 +50,9 @@ $header-links-background-color-dark-mode: $dark-light !default;
 			background-color: $header-links-background-color-dark-mode;
 		}
 	}
-	.navbar-brand .navbar-logo {
-		filter: brightness(0) invert(1);
-	}
+	//.navbar-brand .navbar-logo {
+	//	filter: brightness(0) invert(1);
+	//}
 	.navbar.navbar-primary .navbar-nav .nav-link {
 		color: $labels-dark;
 		.nav-link-icon {
@@ -79,9 +79,9 @@ $header-links-background-color-dark-mode: $dark-light !default;
 			color: $labels-dark;
 		}
 	}
-	.navbar.navbar-primary .navbar-toggler .navbar-toggler-icon {
-		filter: invert(1);
-	}
+	//.navbar.navbar-primary .navbar-toggler .navbar-toggler-icon {
+	//	filter: invert(1);
+	//}
 
 	// footer
 	.footer {
@@ -188,7 +188,7 @@ $header-links-background-color-dark-mode: $dark-light !default;
 
 	.tile, .tile-code {
 		border-top-color: $dark-light;
-		border-bottom-color: $dark-light;
+		//border-bottom-color: $dark-light;
 		border-right-color: $dark-light;
 		background-color: $dark-light;
 		color: $labels-dark;
@@ -260,11 +260,11 @@ $header-links-background-color-dark-mode: $dark-light !default;
 		background-color: transparent;
 		border-color: $dark-primary;
 		color: $dark-primary;
-		&:hover {
-			border-color: $dark-primary;
-			background-color: $dark-primary;
-			color: #fff;
-		}
+		//&:hover {
+		//	border-color: $dark-primary;
+		//	background-color: $dark-primary;
+		//	color: #fff;
+		//}
 	}
 
 	.btn-copy-icon, .btn-qr-icon, .btn-address-card-icon .btn-contract-icon {
@@ -1052,7 +1052,7 @@ $header-links-background-color-dark-mode: $dark-light !default;
 		  }
 	}
 	.main-search-autocomplete {
-		background-color: $dark-bg !important;
+		//background-color: $dark-bg !important;
 		color: #fff !important;
 	}
 	.autocomplete-category {
@@ -1133,4 +1133,17 @@ $header-links-background-color-dark-mode: $dark-light !default;
 .dark-theme-applied .btn-no-border-link-to-tems {
 	border-color: $dark-primary;
 	color: $dark-primary;
+}
+
+.dark-theme-applied .transaction_list_box {
+	background: #313355;
+}
+.dark-theme-applied .tile_label {
+	 color: $labels-dark;
+}
+.dark-theme-applied .search_container {
+	background: #282945;
+}
+.dark-theme-applied .tile_bottom_line {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

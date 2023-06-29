@@ -4,20 +4,12 @@
       <div class="tile-title">
         <%= @block %>
       </div>
-      <!--
-      <%= link(
-          gettext("View details"),
-          class: "tile-details",
-          to: block_path(BlockScoutWeb.Endpoint, :show, @block),
-          "data-selector": "block-number"
-        ) %>
-        -->
       <%= link(
         to: block_path(BlockScoutWeb.Endpoint, :show, @block),
         class: "tile-details",
         "data-selector": "block-number") do %>
-        <%= gettext("View details") %>
-        <img src="/images/arrow-right.png" alt="arrow-right" class="tile_icon" />
+          <%= gettext("View details") %>
+          <img src="/images/arrow-right.png" alt="arrow-right" class="tile_icon" />
       <% end %>
     </div>
     <div class="tile-bottom-contents">

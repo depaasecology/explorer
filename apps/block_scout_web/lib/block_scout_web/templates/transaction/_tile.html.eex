@@ -2,7 +2,8 @@
 <% error_in_internal_tx = @transaction.has_error_in_internal_txs %>
 <% current_user = AuthController.current_user(@conn) %>
 <% tx_tags = BlockScoutWeb.Models.GetTransactionTags.get_transaction_with_addresses_tags(@transaction, current_user) %>
-<div class="tile tile-type-<%= type_suffix(@transaction) %> fade-in <%= status_class(@transaction) %>" data-test="<%= type_suffix(@transaction) %>" data-identifier-hash="<%= @transaction.hash %>">
+<div class="tile tile-type-<%= type_suffix(@transaction) %> fade-in tile_bottom_line <%= status_class(@transaction) %>" data-test="<%= type_suffix(@transaction) %>" data-identifier-hash="<%= @transaction.hash %>">
+  <!-- PC端 -->
   <div class="row tile-body tile-body-pc" data-selector="token-transfers-toggle" data-test="chain_transaction">
     <!-- Block info -->
     <div class="col-md-2 d-flex flex-row flex-md-column flex-nowrap mt-3 mt-md-0 tile-bottom" style="justify-content: space-between">
@@ -25,7 +26,7 @@
       <% end %>
     </div>
     <!-- Content -->
-    <div class="col-md-7 d-flex flex-column pr-2 pr-sm-2 pr-md-0">
+    <div class="col-md-6 d-flex flex-column pr-2 pr-sm-2 pr-md-0">
       <!--
       <span>
       <div class="text-truncate d-flex">
@@ -99,13 +100,13 @@
       <% end %>
     </div>
     <!-- Color Block -->
-    <div class="tile-transaction-type-block col-md-3 d-flex flex-row flex-md-column">
+    <div class="tile-transaction-type-block col-md-4 d-flex flex-row flex-md-column">
       <div class="block_price">
         <span class="d-flex flex-md-row flex-column mt-3 mt-md-0">
         <span class="tile-title">
           <%= value(@transaction, include_label: false) %> <%= Explorer.coin_name() %>
         </span>
-        <span class="ml-0 ml-md-1 text-nowrap">
+        <span class="ml-0 ml-md-1 text-nowrap fee_box">
           <%= formatted_fee(@transaction, denomination: :ether, include_label: false) %> <%= gettext "TX Fee" %>
         </span>
       </span>
@@ -132,17 +133,18 @@
       </div>
     </div>
   </div>
+
+  <!-- 移动端 -->
   <div class="row tile-body tile-body-mobile" data-selector="token-transfers-toggle" data-test="chain_transaction">
     <!-- Block info -->
     <!-- col-md-6 d-flex flex-row flex-md-column flex-nowrap justify-content-space-between mt-3 mt-md-0 tile-bottom -->
-    <div style="display: flex">
-      <div style="flex: 1">
+    <div class="col-12" style="display: flex; align-items: center">
       <span class="mr-2 mr-md-0 order-1">
         <%= @transaction |> block_number() |> BlockScoutWeb.RenderHelper.render_partial() %>
       </span>
-        <span class="mr-2 mr-md-0 order-2" in-tile data-from-now="<%= block_timestamp(@transaction) %>"></span>
-        <%= if from_or_to_address?(@transaction, assigns[:current_address]) do %>
-        <span class="mr-2 mr-md-0 order-0 order-md-3">
+      <span class="mr-2 mr-md-0 order-2" in-tile data-from-now="<%= block_timestamp(@transaction) %>"></span>
+      <%= if from_or_to_address?(@transaction, assigns[:current_address]) do %>
+      <span class="mr-2 mr-md-0 order-0 order-md-3">
           <%= if @transaction.from_address_hash == assigns[:current_address].hash do %>
             <span data-test="transaction_type" class="badge badge-danger tile-badge">
               <%= gettext "OUT" %>
@@ -153,42 +155,7 @@
             </span>
           <% end %>
         </span>
-        <% end %>
-      </div>
-      <!-- Color Block -->
-      <!-- tile-transaction-type-block col-md-6 d-flex flex-row flex-md-column -->
-      <div class="tile-transaction-type-block" style="flex: 1">
-        <div class="block_price">
-        <span class="d-flex flex-md-row flex-column mt-3 mt-md-0">
-        <span class="tile-title">
-          <%= value(@transaction, include_label: false) %> <%= Explorer.coin_name() %>
-        </span>
-        <span class="ml-0 ml-md-1 text-nowrap">
-          <%= formatted_fee(@transaction, denomination: :ether, include_label: false) %> <%= gettext "TX Fee" %>
-        </span>
-      </span>
-        </div>
-
-        <div class="tile_state_bn" style="align-items: center">
-        <span>
-          <%= if error_in_internal_tx do %>
-            <%= render BlockScoutWeb.CommonComponentsView, "_i_tooltip_2.html", text: gettext("Error in internal transactions"), additional_classes: ["color-inherit"] %>
-          <% end %>
-          <span class="tile-label" data-test="transaction_type">
-            <%= transaction_display_type(@transaction) %>
-          </span>
-        </span>
-          <span class="tile-status-label ml-2" data-test="transaction_status" style="margin-left: 4px">
-        <%= if status_class(@transaction) == "tile-status--pending" do %>
-          <div class="loading-spinner-small">
-            <span class="loading-spinner-block-1"></span>
-            <span class="loading-spinner-block-2"></span>
-          </div>
-        <% end %>
-        <%= formatted_result(status) %>
-      </span>
-        </div>
-      </div>
+      <% end %>
     </div>
 
     <!-- Content -->
@@ -265,5 +232,41 @@
       <% end %>
       <% end %>
     </div>
+
+    <!-- Color Block -->
+    <!-- tile-transaction-type-block col-md-6 d-flex flex-row flex-md-column -->
+    <div class="tile-transaction-type-block col-12">
+      <div class="block_price" style="margin-top: 0.7rem !important;">
+        <span class="d-flex flex-md-row flex-column mt-md-0" style="flex-direction: row !important;">
+        <span class="tile-title" style="padding-right: 12px">
+          <%= value(@transaction, include_label: false) %> <%= Explorer.coin_name() %>
+        </span>
+          <span class="ml-0 ml-md-1 text-nowrap">
+            <%= formatted_fee(@transaction, denomination: :ether, include_label: false) %> <%= gettext "TX Fee" %>
+          </span>
+      </span>
+      </div>
+
+      <div class="tile_state_bn" style="align-items: center; margin-top: 0.7rem !important;">
+        <span>
+          <%= if error_in_internal_tx do %>
+            <%= render BlockScoutWeb.CommonComponentsView, "_i_tooltip_2.html", text: gettext("Error in internal transactions"), additional_classes: ["color-inherit"] %>
+          <% end %>
+          <span class="tile-label" data-test="transaction_type">
+            <%= transaction_display_type(@transaction) %>
+          </span>
+        </span>
+        <span class="tile-status-label ml-2" data-test="transaction_status" style="margin-left: 4px">
+        <%= if status_class(@transaction) == "tile-status--pending" do %>
+          <div class="loading-spinner-small">
+            <span class="loading-spinner-block-1"></span>
+            <span class="loading-spinner-block-2"></span>
+          </div>
+        <% end %>
+        <%= formatted_result(status) %>
+      </span>
+      </div>
+    </div>
+
   </div>
 </div>

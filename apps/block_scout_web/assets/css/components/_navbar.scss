@@ -83,8 +83,10 @@ $header-logo-text-color: #333 !default;
       }
 
       .nav-link-icon {
-        align-items: center;
+        width: 16px;
+        height: 16px;
         display: flex;
+        align-items: center;
         margin-right: 0.71em;
         position: relative;
         top: -1px;
@@ -92,6 +94,9 @@ $header-logo-text-color: #333 !default;
         path {
           fill: $header-icon-color;
           transition: $transition-cont;
+          &:hover {
+            fill-opacity: 1;
+          }
         }
       }
     }
@@ -315,4 +320,38 @@ $header-logo-text-color: #333 !default;
 
 .visually-hidden {
   display: block;
+}
+
+
+// 移动端搜索框
+.search_container {
+  padding: 0 16px;
+  background: $header-background-color;
+  @media screen and (max-width: 768px) {
+    padding-top: 15px;
+  }
+}
+.search_box {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: transparent;
+  @media screen and (max-width: 768px) {
+    background: rgba(255, 255, 255,  0.1);
+  }
+  .search_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    img  {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .search_input_box {
+    flex: 1;
+    height: 40px;
+  }
 }

@@ -33,7 +33,7 @@
           <li class="nav-item dropdown" style="display: none">
             <a class="nav-link topnav-nav-link dropdown-toggle" href="#" id="navbarBlocksDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="nav-link-icon">
-                <%= render BlockScoutWeb.IconsView, "_blockchain_icon.html" %>
+                <%= render BlockScoutWeb.IconsView, "_blocks_icon.html" %>
               </span>
               <%= gettext("Blockchain") %>
             </a>
@@ -89,7 +89,7 @@
         <li class="nav-item dropdown">
           <a href="#" role="button" id="navbarTokensDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="nav-link-icon">
-                <%= render BlockScoutWeb.IconsView, "_blockchain_icon.html" %>
+                <%= render BlockScoutWeb.IconsView, "_blocks_icon.html" %>
               </span>
             <%= gettext("Blocks") %>
           </a>
@@ -110,7 +110,7 @@
         <li class="nav-item dropdown">
           <a href="#" role="button" id="navbarTokensDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="nav-link-icon">
-                <%= render BlockScoutWeb.IconsView, "_blockchain_icon.html" %>
+                <%= render BlockScoutWeb.IconsView, "_transactions_icon.html" %>
               </span>
             <%= gettext("Transactions") %>
           </a>
@@ -191,6 +191,9 @@
             </div>
           </li>
         <% end %>
+
+        <!-- Apps -->
+        <!--
         <%= if apps_menu == true do %>
           <li class="nav-item dropdown">
             <a href="#" role="button" id="navbarAppsDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -220,6 +223,7 @@
             </div>
           </li>
         <% end %>
+        -->
 
         <!-- Dark mode changer -->
         <%= unless Application.get_env(:block_scout_web, :permanent_light_mode_enabled) || Application.get_env(:block_scout_web, :permanent_dark_mode_enabled) do %>
@@ -231,6 +235,7 @@
         <% end %>
         <%= render BlockScoutWeb.LayoutView, "_account_menu_item.html", conn: @conn, current_user: @current_user %>
       </ul>
+      <!-- PC端搜索框 -->
       <%= render BlockScoutWeb.LayoutView, "_search.html", conn: @conn, id: "main-search-autocomplete", additional_classes: ["mobile-search-hide"] %>
       <!-- 选择节点？-->
       <div class="nav-item dropdown">

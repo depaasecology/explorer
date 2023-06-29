@@ -107,7 +107,7 @@
               </div>
             <% end %>
             <%= if price_chart_legend_enabled? || Enum.member?(@chart_config.market, :market_cap) do %>
-            <div class="dashboard-banner-chart-legend-item market-cap-per-day">
+              <div class="dashboard-banner-chart-legend-item market-cap-per-day">
                 <span class="dashboard-banner-chart-legend-label">
                 <%= gettext "Market Cap" %>
                 </span>
@@ -119,14 +119,18 @@
             </div>
             <% end %>
           <% end %>
-          <%= render BlockScoutWeb.ChainView, "gas_price_oracle_legend_item.html", gas_price: @gas_price %>
-          <%= if Map.has_key?(@chart_config, :transactions) do %>
 
+          <!--
+          <%= render BlockScoutWeb.ChainView, "gas_price_oracle_legend_item.html", gas_price: @gas_price %>
+          -->
+
+          <%= if Map.has_key?(@chart_config, :transactions) do %>
             <% transaction_chart_config = @chart_config.transactions%>
             <%= if Enum.member?(transaction_chart_config, :transactions_per_day) do %>
-            <div class="dashboard-banner-chart-legend-item tx-per-day">
-                <span class="dashboard-banner-chart-legend-label">
-                    <%= gettext "Daily Transactions" %>
+            <div class="dashboard-banner-chart-legend-item tx-per-day de_chain_transactions">
+              <img src="/images/icon_chain_transactions.png" alt="">
+                <span class="dashboard-banner-chart-legend-label de_chain_transactions_label">
+                    <%= gettext "Tx/day" %>
                 </span>
                 <span class="dashboard-banner-chart-legend-value" data-selector="tx_per_day">
                     <% num_of_transactions = BlockScoutWeb.Cldr.Number.to_string!(Enum.at(@transaction_stats, 0).number_of_transactions, format: "#,###") %>
@@ -151,7 +155,7 @@
     </div>
   </div>
 </div>
-<section class="container">
+<section class="container" style="padding-left: 0; padding-right: 0">
   <div class="card card-chain-blocks js-ad-dependant-mb-3">
     <div class="card-body">
       <!--

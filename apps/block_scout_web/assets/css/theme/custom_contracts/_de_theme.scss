@@ -4,6 +4,7 @@ $secondary: #87e1a9;
 $tertiary: #bf9cff;
 $additional-font: #fff;
 $de-background-color: #FAF9FB; // test new
+$de-background-panel-color: #1A2433; //test new
 
 // Logo Size
 $navbar-logo-height: 22px;
@@ -13,7 +14,6 @@ $footer-background-color: #1A2433; // test
 $footer-title-color: #FFFFFF; // test
 $footer-text-color: #0F77F6; // test
 $footer-item-disc-color: $secondary;
-.footer-logo { filter: brightness(0) invert(1); }
 
 // dashboard
 $dashboard-line-color-price: $tertiary; // price left border

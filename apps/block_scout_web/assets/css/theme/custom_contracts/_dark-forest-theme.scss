@@ -51,9 +51,9 @@ $dark-primary-alternate: $dark-primary;
 			color: $labels-dark;
 		}
 	}
-	.navbar.navbar-primary .navbar-toggler .navbar-toggler-icon {
-		filter: invert(1);
-	}
+	//.navbar.navbar-primary .navbar-toggler .navbar-toggler-icon {
+	//	filter: invert(1);
+	//}
 
 	// footer
 	.footer {
@@ -379,7 +379,7 @@ $dark-primary-alternate: $dark-primary;
 		border-bottom-color: darken($labels-dark, 30);
 	}
 	.main-search-autocomplete {
-        background-color: $dark-light !important;
+        //background-color: $dark-light !important;
         color: #fff !important;
     }
 	.table th, .table td {

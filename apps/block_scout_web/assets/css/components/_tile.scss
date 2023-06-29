@@ -80,7 +80,7 @@ $tile-body-a-color: #5959d8 !default;
   //padding: 0 5px;
   //position: relative;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
 
   @include media-breakpoint-down(sm) {
@@ -120,10 +120,10 @@ $tile-body-a-color: #5959d8 !default;
 }
 
 .tile-bottom-contents {
-  //background-color: #f6f7f9;
+  background-color: transparent !important;
   font-size: 12px;
   line-height: 1.2;
-  padding: 0.8rem 1rem;
+  padding: 0 16px;
 }
 
 .tile-transactions {
@@ -202,7 +202,7 @@ $tile-body-a-color: #5959d8 !default;
     color: $tile-title-color;
     font-size: 12px;
     display: flex;
-    padding: 0px 16px;
+    //padding: 0px 16px;
 
     &-hash {
       font-weight: 300;
@@ -218,7 +218,6 @@ $tile-body-a-color: #5959d8 !default;
   font-size: 12px;
   line-height: 1.4rem;
   padding: $tile-padding;
-  border-bottom: 1px solid #EFEFEF;
 
   //@include generate-tile-block(
   //  ".tile-type-block",
@@ -291,27 +290,30 @@ $tile-body-a-color: #5959d8 !default;
 
   &.tile-type-block {
     max-width: 100%;
-    margin: 0 12px;
+    margin: 0 8px;
+    padding: 10px 8px;
     background: #FFFFFF;
+    border-radius: 10px;
     .tile-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding-bottom: 10px;
     }
     .tile-title {
       flex: 1;
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 12px;
-      padding: 1rem 1rem 0 1rem;
+      padding: 0 1rem;
     }
     .tile-details {
       font-size: 12px;
       color: $primary;
       background: #EFEFEF;
-      padding: 2px 12px;
-      border: 1px solid transparent;
-      border-radius: 8px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -457,6 +459,7 @@ $tile-body-a-color: #5959d8 !default;
 }
 
 .fade-up-blocks-chain {
+  padding: 0 !important;
   .tile-type-block {
     position: relative;
   }
@@ -677,7 +680,7 @@ $cube-quantity: 5;
 .tile_icon {
   width: 12px;
   height: 12px;
-  margin-left: 6px;
+  margin-left: 4px;
 }
 
 .tile-body-pc {
@@ -691,4 +694,14 @@ $cube-quantity: 5;
   @media screen and (max-width: 768px) {
     display: flex;
   }
+}
+
+.fee_box {
+  min-width: 180px;
+  text-align: right;
+}
+
+// tile 下划线
+.tile_bottom_line {
+  border-bottom: 1px solid #EFEFEF;
 }

@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="footer-body container">
     <div class="row">
-      <div  class="col-xs-12 col-lg-8">
+      <div  class="col-12">
         <div class="row">
           <!-- Logo -->
           <div class="col-xs-12 col-lg-4">
@@ -37,8 +37,8 @@
               <% end %>
               <%= render BlockScoutWeb.LayoutView, "_add_chain_to_mm.html" %>
               -->
-              <li><a href="" rel="noreferrer" class="footer-link meta_mask" target="_blank"><%= gettext("MetaMask") %></a></li>
-              <li><a href="https://github.com/depaasecology/explorer gitHub" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("GitHub") %></a></li>
+              <li><a rel="noreferrer" class="footer-link meta_mask" target="_blank"><%= gettext("MetaMask") %></a></li>
+              <li><a href="https://github.com/depaasecology/explorer" rel="noreferrer" class="footer-link github" target="_blank"><%= gettext("GitHub") %></a></li>
               <li><a href="http://depaas.de/" rel="noreferrer" class="footer-link contact_us" target="_blank"><%= gettext("Contact Us") %></a></li>
             </ul>
           </div>
@@ -68,6 +68,7 @@
       <p class="footer-info-text">
         <%= gettext("DE_Explorer provides users with a comprehensive, easy-to-use interface to view, confirm and inspect transactions on the EVM (Ethereum Virtual Machine) blockchain.") %>
 
+        <!--
         <% version = version() %>
         <%= unless ignore_version?(version) do %>
         <% release_link = release_link(version) %>
@@ -75,6 +76,7 @@
               <%= gettext("Version") %>: <%= release_link %>
             </span>
         <% end %>
+        -->
       </p>
     </div>
   </div>

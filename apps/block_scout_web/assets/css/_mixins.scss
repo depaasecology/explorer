@@ -33,16 +33,16 @@
     padding-right: 1rem;
     position: relative;
 
-    &::before {
-      background-color: $border-color;
-      border-radius: 2px;
-      content: "";
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 4px;
-    }
+    //&::before {
+    //  background-color: $border-color;
+    //  border-radius: 2px;
+    //  content: "";
+    //  height: 100%;
+    //  left: 0;
+    //  position: absolute;
+    //  top: 0;
+    //  width: 4px;
+    //}
   }
 
   &-label {

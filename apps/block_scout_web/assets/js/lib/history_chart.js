@@ -27,11 +27,12 @@ const grid = {
 }
 
 function getTxChartColor () {
-  if ((isDarkMode())) {
-    return sassVariables.dashboardLineColorTransactionsDarkTheme
-  } else {
-    return sassVariables.dashboardLineColorTransactions
-  }
+  // if ((isDarkMode())) {
+  //   return sassVariables.dashboardLineColorTransactionsDarkTheme
+  // } else {
+  //   return sassVariables.dashboardLineColorTransactions
+  // }
+  return sassVariables.dashboardLineColorTransactionDeTheme
 }
 
 function getPriceChartColor () {
@@ -60,6 +61,7 @@ function xAxe (fontColor) {
       stepSize: 14
     },
     ticks: {
+      maxTicksLimit: 5,
       color: fontColor
     }
   }
@@ -273,7 +275,7 @@ class MarketHistoryChart {
 
     this.availableSupply = availableSupply
 
-    const txChartTitle = 'Daily transactions'
+    const txChartTitle = ''
     const marketChartTitle = 'Daily price and market cap'
     let chartTitle = ''
     if (Object.keys(dataConfig).join() === 'transactions') {

@@ -208,6 +208,7 @@ $('.main-search-autocomplete').on('keyup', function (event) {
 
 $('#search-icon').on('click', function (event) {
   const value = $('.main-search-autocomplete').val() || $('.main-search-autocomplete-mobile').val()
+  console.log('search_test', value)
   search(value)
 })
 
