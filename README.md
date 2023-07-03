@@ -23,7 +23,7 @@ See the [project documentation](https://docs.blockscout.com/) for instructions:
 - [Requirements](https://github.com/depaasecology/explorer)
 - [Ansible deployment](https://github.com/depaasecology/explorer)
 - [Manual deployment](https://github.com/depaasecology/explorer)
-- [ENV variables]([https://github.com/depaasecology/explorer](https://github.com/depaasecology/explorer/blob/main/docker-compose/envs/common-blockscout.env)
+- [ENV variables](https://github.com/depaasecology/explorer/blob/main/docker-compose/envs/common-blockscout.env)
 - [Configuration options](https://github.com/depaasecology/explorer)
 
 ## License
