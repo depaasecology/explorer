@@ -3,6 +3,7 @@ import { Chart, LineController, LineElement, PointElement, LinearScale, TimeScal
 import 'chartjs-adapter-luxon'
 import humps from 'humps'
 import numeral from 'numeral'
+import moment from 'moment'
 import { DateTime } from 'luxon'
 import { formatUsdValue } from '../lib/currency'
 import { isDarkMode } from '../lib/dark_mode'
@@ -62,7 +63,11 @@ function xAxe (fontColor) {
     },
     ticks: {
       maxTicksLimit: 5,
-      color: fontColor
+      color: fontColor,
+      callback: function(value) {
+        let formattedDate = moment(value).format('MMM D');
+        return formattedDate;
+      }
     }
   }
 }
