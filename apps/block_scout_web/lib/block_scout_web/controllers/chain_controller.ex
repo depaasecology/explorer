@@ -42,7 +42,8 @@ defmodule BlockScoutWeb.ChainController do
 
     chart_config = Application.get_env(:block_scout_web, :chart)[:chart_config]
 
-    running_days = DateTime.diff(DateTime.now(), ~U[2020-11-27T12:00:00Z], :days)
+    now = DateTime.utc_now()
+    running_days = DateTime.diff(now, ~U[2020-11-27T12:00:00Z], :days)
 
     render(
       conn,
