@@ -43,7 +43,9 @@ defmodule BlockScoutWeb.ChainController do
     chart_config = Application.get_env(:block_scout_web, :chart)[:chart_config]
 
     now = DateTime.utc_now()
-    running_days = DateTime.diff(now, ~U[2020-11-27T12:00:00Z], :days)
+    target_date = ~U[2020-11-27T12:00:00Z]
+    diff_seconds = DateTime.diff(now, target_date, :seconds)
+    running_days = div(diff_seconds, 86400)  # 将秒数转换为天数（86400 秒是一天）
 
     render(
       conn,
