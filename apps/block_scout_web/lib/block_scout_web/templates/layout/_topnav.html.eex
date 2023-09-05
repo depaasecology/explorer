@@ -183,11 +183,11 @@
                     class: "dropdown-item #{tab_status("api-docs", @conn.request_path)}",
                     to: api_url() <> api_docs_path(@conn, :index)
                   ) %>
-              <%= link(
-                    gettext("Eth RPC"),
-                    class: "dropdown-item #{tab_status("eth-rpc-api-docs", @conn.request_path)}",
-                    to: api_url() <> api_docs_path(@conn, :eth_rpc)
-                  ) %>
+<!--              <%= link(-->
+<!--                    gettext("Eth RPC"),-->
+<!--                    class: "dropdown-item #{tab_status("eth-rpc-api-docs", @conn.request_path)}",-->
+<!--                    to: api_url() <> api_docs_path(@conn, :eth_rpc)-->
+<!--                  ) %>-->
             </div>
           </li>
         <% end %>

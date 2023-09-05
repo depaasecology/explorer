@@ -4,6 +4,15 @@
       <!-- Stats -->
       <div class="dashboard-banner-network-plain-container">
         <div class="dashboard-banner-network-stats">
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
+            <img src="/images/icon_time_log.png" class="item_icon" alt="icon_time_log">
+            <span class="dashboard-banner-network-stats-label">
+              <%= gettext "Running days" %>
+            </span>
+            <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
+              <%= @running_days %>
+            </span>
+          </div>
           <%= case @average_block_time do %>
             <% {:error, :disabled} -> %>
           <%= nil %>

@@ -268,7 +268,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
   @include media-breakpoint-down(lg) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     row-gap: 20px;
   }
 
@@ -279,7 +279,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
 
   @include media-breakpoint-down(sm) {
     column-gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include stats-item($dashboard-stats-item-border-color, $dashboard-stats-item-label-color, $dashboard-stats-item-value-color);

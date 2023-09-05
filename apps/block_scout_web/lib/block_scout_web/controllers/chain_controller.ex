@@ -42,6 +42,8 @@ defmodule BlockScoutWeb.ChainController do
 
     chart_config = Application.get_env(:block_scout_web, :chart)[:chart_config]
 
+    running_days = DateTime.diff(DateTime.now(), ~U[2020-11-27T12:00:00Z], :days)
+
     render(
       conn,
       "show.html",
@@ -57,7 +59,8 @@ defmodule BlockScoutWeb.ChainController do
       transactions_path: recent_transactions_path(conn, :index),
       transaction_stats: transaction_stats,
       block_count: block_count,
-      gas_price: Application.get_env(:block_scout_web, :gas_price)
+      gas_price: Application.get_env(:block_scout_web, :gas_price),
+      running_days: running_days
     )
   end
 

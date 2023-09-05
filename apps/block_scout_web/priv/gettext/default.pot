@@ -3680,3 +3680,8 @@ msgstr ""
 #, elixir-autogen, elixir-format
 msgid "to CSV file"
 msgstr ""
+
+#: lib/block_scout_web/templates/chain/show.html.eex
+#, elixir-autogen, elixir-format
+msgid "Running days"
+msgstr ""
