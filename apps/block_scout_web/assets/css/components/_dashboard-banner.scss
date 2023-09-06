@@ -217,7 +217,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
   justify-content: center;
   margin: 45px 0 -15px 30px;
   max-width: 100%;
-  padding: 30px 0 30px 60px;
+  padding: 30px 0 30px 30px;
   width: 750px;
   position: relative;
   border-top-right-radius: 32px;
@@ -263,9 +263,9 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
 }
 
 .dashboard-banner-network-stats {
-  column-gap: 25px;
+  column-gap: 2px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
   @include media-breakpoint-down(lg) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -279,7 +279,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
 
   @include media-breakpoint-down(sm) {
     column-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   @include stats-item($dashboard-stats-item-border-color, $dashboard-stats-item-label-color, $dashboard-stats-item-value-color);
